@@ -1,0 +1,74 @@
+Opis realizacji zadań z laboratorium nr. 4. część pierwsza (zadanie 4).
+
+(nowe) - miejsca oznaczone w ten sposób oznaczają nowe elementy systemu wypożyczalni
+
+Budowa wypożyczalni:
+Wypożyczalnia jest zbudowana z klas. Każda klasa oprócz "Zbior" oraz "Wypozyczalnia" reprezentują oddzielne
+typy pozycji wypożyczanych w wypożyczalni. Klasa zbiór jest klasa bazową. Program zawiera proste menu, z
+którego można wybierać opcje aby można było wygodnie posługiwać się takim uproszczonym systemem wypożyczalni.
+W klasie "Wypozyczalnia" znajduje się metoda "main".
+Szczegóły na temat programu znajdują się w odpowiednich miejscach w postaci komentarzy w kodzie.
+
+(nowe)
+	System wypożyczalni został poddany kilku modyfikacjom. Pierwszą z nich jest zastosowanie kompozycji.
+Kompozycja polega na tworzeniu nowych klas z użyciem instancji klas starszych. Pierwszym użyciem kompozycji
+w systemie było stworzenie klasy Uzytkownk za pomocą instancji klasy StatusUzytkownika. Działanie to 
+pozwoliło na ustalenie statusu zakładanego konta przy pomocy zastosowaniu konstruktora przeciążonego. 
+Kompozycja znalazła także zastosowanie w utworzeniu klasy Filia, w której został utworzony obiekt klasy 
+Uzytkownik typu administrator. Została zaimplementowana możliwość tworzenia konta użytkownika. Enkapsulacja
+atrybutów w klasach została poprawiona. Dane dot. wypożyczeń znajdują się odtąd w tablicach.
+(nowe)
+
+Schemat struktury systemu:
+          (nowe)
+Tworzenie konta użytkownika <-> Memu główne <-> menu użytkownika <-*> Zasoby wypożyczalni  
+								   \> Dane użytkownika  (nowe)
+								   \> Dane wypożyczalni (nowe)
+
+<-> / \> - oznacza możliwość poruszania się pomiędzy tymi pozycjami menu w konsoli
+<-*> - oznacza warunkowe poruszanie się pomiędzy tymi pozycjami menu w konsoli (warunkiem jest posiadanie 
+zerowych zaległości finansowych)
+
+
+Zaimplementowane funkcjonalności:
+-Możliwość wypożyczania pozycji przez użytkownika 
+-Wyświetlanie na koncie użytkownika wypożyczonych pozycji oraz ewentualnych kar finansowych
+-Menu użytkownika
+-Blokada konta w przypadku braku zwrotu danej pozycji w terminie
+-Dziedziczenie klas 
+-Tworzenie nowych obiektów klas dziedziczących przez konstruktory
+-------------------------------------------------------------------------
+-(nowe)Wykorzystanie kompozycji 
+-(nowe)możliwość tworzenia konta użytkownika
+-(nowe)dodanie administratora
+-(nowe)Możliwośc wyświetlenia danych dot. użytkownika oraz administratora
+-------------------------------------------------------------------------
+
+Funkcjonalności do zaimplementowania:
+-brak (w zakresie polecenia do wykonania)
+
+Klasy:
+-Zbior
+-Ebook
+-Audiobook
+-Film
+-PlytaMuzyczna
+-Ksiazka
+-Wypozyczalnia
+(nowe)
+-Uzytkownik
+-Filia
+-StatusUzytkownika
+
+Dziedziczenie klas:
+Klasa zbiór jest klasa bazową, po której dziedziczą klasy:
+-Ebook
+-Audiobook
+-Film
+-PlytaMuzyczna
+-Ksiażka
+
+(nowe)
+Kompozycja:
+- Do stworzenia klasy Uzytkownk zostały użyte instancje klasy StatusUzytkownika 
+- Do stworzenia klasy Filia została użyta instancja klasy Uzytkownik
